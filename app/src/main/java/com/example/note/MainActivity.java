@@ -96,9 +96,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     private void setUpRecycleView() {
         rcvNote.setHasFixedSize(true);
-        rcvNote.setLayoutManager(new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
+        layoutManager.setStackFromEnd(true);
+        rcvNote.setLayoutManager(layoutManager);
         adapter = new Adapter(MainActivity.this, arrayList, noteClickListener);
         rcvNote.setAdapter(adapter);
+        rcvNote.scrollToPosition(adapter.getItemCount() - 1);
     }
 
     private final NoteClickListener noteClickListener = new NoteClickListener() {
