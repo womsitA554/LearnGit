@@ -137,4 +137,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
         return false;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
