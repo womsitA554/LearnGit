@@ -85,7 +85,13 @@ public class NoteActivity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(NoteActivity.this, "Add failed", Toast.LENGTH_SHORT).show();
+    }
+
+
 }

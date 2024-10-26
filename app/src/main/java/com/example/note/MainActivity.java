@@ -137,4 +137,15 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
         return false;
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(MainActivity.this, "Add failed", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
 }
